@@ -36,7 +36,7 @@ read -rp "Enter your Telegram CHAT_ID: " CHAT_ID
 read -rp "Enter a HOSTNAME label for this server: " HOSTNAME
 
 # Inject variables into script
-sed -i "s|^TOKEN=.*|TOKEN=\"$BOT_TOKEN\"|" "$SCRIPT_PATH"
+sed -i "s|^BOT_TOKEN=.*|BOT_TOKEN=\"$BOT_TOKEN\"|" "$SCRIPT_PATH"
 sed -i "s|^CHAT_ID=.*|CHAT_ID=\"$CHAT_ID\"|" "$SCRIPT_PATH"
 sed -i "s|^HOSTNAME=.*|HOSTNAME=\"$HOSTNAME\"|" "$SCRIPT_PATH"
 
