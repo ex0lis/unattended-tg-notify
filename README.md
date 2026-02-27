@@ -2,7 +2,10 @@
 Sends notifications and the latest unattended-upgrades run log directly to a Telegram chat or channel.
 
 Setup is done via one-liner:
+
+'''
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/ex0lis/unattended-tg-notify/refs/heads/main/setup-unattended-tg-notify.sh)"
+'''
 
 The script automates the setup of Telegram notifications for unattended-upgrades: every time unattended-upgrades runs, the system sends a message to your Telegram chat with the latest log of the unattended-upgrade.
 
