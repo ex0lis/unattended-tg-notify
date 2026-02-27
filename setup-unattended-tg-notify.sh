@@ -10,13 +10,14 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 read -rp "Enter the full path where the script should be installed (e.g. /usr/local/bin/unattended-tg-notify.sh): " SCRIPT_PATH
-
+SCRIPT_PATH="${SCRIPT_PATH%/}"
 mkdir -p "$(dirname "$SCRIPT_PATH")"
 
 REPO_URL="https://raw.githubusercontent.com/ex0lis/unattended-tg-notify/refs/heads/main/setup-unattended-tg-notify.sh"
 
 echo "Downloading unattended-tg-notify.sh from repo..."
-curl -fsSL "$REPO_URL" -o "$SCRIPT_PATH"
+
+curl -fsSL "$REPO_URL" -o "$SCRIPT_PATH/unattended-tg-notify.sh"
 
 if [ ! -f "$SCRIPT_PATH" ]; then
     echo "Error: Failed to download the script."
@@ -54,7 +55,7 @@ Description=Send Telegram notifications for unattended-upgrades
 
 [Service]
 Type=oneshot
-ExecStart=$SCRIPT_PATH
+ExecStart=$SCRIPT_PATH/unattended-tg-notify.sh
 EOF
 
 echo "Service unit created at $SERVICE_UNIT"
