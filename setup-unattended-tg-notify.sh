@@ -67,11 +67,9 @@ echo "Service unit created at $SERVICE_UNIT"
 systemctl daemon-reload
 systemctl enable unattended-telegram.path
 systemctl start unattended-telegram.path
-systemctl enable unattended-telegram.service
-systemctl start unattended-telegram.service
 
-systemctl status unattended-telegram.path --no-pager
-systemctl status unattended-telegram.service --no-pager
+systemctl status unattended-telegram.path --no-pager --quiet
+systemctl status unattended-telegram.service --no-pager --quiet
 
 echo
 echo "Setup complete! To test, run:"
