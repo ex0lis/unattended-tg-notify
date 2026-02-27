@@ -59,7 +59,7 @@ Description=Send Telegram notifications for unattended-upgrades
 
 [Service]
 Type=oneshot
-ExecStart=$SCRIPT_PATH/unattended-tg-notify.sh
+ExecStart=$SCRIPT_PATH
 EOF
 
 echo "Service unit created at $SERVICE_UNIT"
@@ -68,7 +68,6 @@ systemctl daemon-reload
 systemctl enable unattended-telegram.path
 systemctl start unattended-telegram.path
 
-echo "✅ Systemd path enabled and started."
 systemctl status unattended-telegram.path --no-pager
 systemctl status unattended-telegram.service --no-pager
 
