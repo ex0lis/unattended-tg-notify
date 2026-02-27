@@ -17,7 +17,7 @@ if [ -d "$USER_PATH" ]; then
     SCRIPT_PATH="$USER_PATH/unattended-tg-notify.sh"
 fi
 
-REPO_URL="https://raw.githubusercontent.com/ex0lis/unattended-tg-notify/refs/heads/main/setup-unattended-tg-notify.sh"
+REPO_URL="https://raw.githubusercontent.com/ex0lis/unattended-tg-notify/refs/heads/main/unattended-tg-notify.sh"
 
 echo "Downloading unattended-tg-notify.sh from repo..."
 
