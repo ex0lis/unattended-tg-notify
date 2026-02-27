@@ -13,7 +13,7 @@ read -rp "Enter the full path where the script should be installed (e.g. /usr/lo
 
 mkdir -p "$(dirname "$SCRIPT_PATH")"
 
-REPO_URL="https://github.com/ex0lis/unattended-tg-notify/blob/main/unattended-tg-notify.sh"
+REPO_URL="https://raw.githubusercontent.com/ex0lis/unattended-tg-notify/refs/heads/main/setup-unattended-tg-notify.sh"
 
 echo "Downloading unattended-tg-notify.sh from repo..."
 curl -fsSL "$REPO_URL" -o "$SCRIPT_PATH"
