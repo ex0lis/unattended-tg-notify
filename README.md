@@ -16,8 +16,8 @@ The script automates the setup of Telegram notifications for unattended-upgrades
 3) Asks for BOT_TOKEN, CHAT_ID, and machine HOSTNAME.
 4) Creates systemd service unit (.service)
 This service is triggered by a .path unit.
-5) Creates systemd path unit (.path) \n
-Watches the file /var/lib/apt/periodic/unattended-upgrades-stamp, which unattended-upgrades touches after every run.
+5) Creates systemd path unit (.path)\
+Watches the file /var/lib/apt/periodic/unattended-upgrades-stamp, which unattended-upgrades touches after every run.\
 When the file changes, systemd automatically triggers the .service.
 7) Runs systemctl daemon-reload, enables and starts the path unit so it begins monitoring immediately.
 8) Shows status of the .path and .service units.
