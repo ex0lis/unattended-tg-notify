@@ -65,8 +65,8 @@ systemctl enable unattended-telegram.path
 systemctl start unattended-telegram.path
 
 echo "✅ Systemd path enabled and started."
-
 systemctl status unattended-telegram.path --no-pager
+systemctl status unattended-telegram.service --no-pager
 
 echo
 echo "Setup complete! To test, run:"
