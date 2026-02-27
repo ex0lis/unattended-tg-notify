@@ -68,8 +68,8 @@ systemctl daemon-reload
 systemctl enable unattended-telegram.path
 systemctl start unattended-telegram.path
 
-systemctl status unattended-telegram.path --no-pager || true
-systemctl status unattended-telegram.service --no-pager || true
+systemctl status unattended-telegram.path --no-pager
+#systemctl status unattended-telegram.service --no-pager
 
 echo
 echo "Setup complete! To test, run:"
