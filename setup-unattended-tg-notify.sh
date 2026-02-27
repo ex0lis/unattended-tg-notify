@@ -9,15 +9,19 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-read -rp "Enter the full path where the script should be installed (e.g. /usr/local/bin/unattended-tg-notify.sh): " SCRIPT_PATH
-SCRIPT_PATH="${SCRIPT_PATH%/}"
-mkdir -p "$(dirname "$SCRIPT_PATH")"
+read -rp "Enter the full directory path where the script should be installed (e.g. /usr/local/bin/): " USER_PATH
+USER_PATH="${USER_PATH%/}"
+mkdir -p "$USER_PATH"
+
+if [ -d "$USER_PATH" ]; then
+    SCRIPT_PATH="$USER_PATH/unattended-tg-notify.sh"
+fi
 
 REPO_URL="https://raw.githubusercontent.com/ex0lis/unattended-tg-notify/refs/heads/main/setup-unattended-tg-notify.sh"
 
 echo "Downloading unattended-tg-notify.sh from repo..."
 
-curl -fsSL "$REPO_URL" -o "$SCRIPT_PATH/unattended-tg-notify.sh"
+curl -fsSL "$REPO_URL" -o "$SCRIPT_PATH"
 
 if [ ! -f "$SCRIPT_PATH" ]; then
     echo "Error: Failed to download the script."
